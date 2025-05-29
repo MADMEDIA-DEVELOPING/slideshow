@@ -1,0 +1,192 @@
+/* Stiluri pentru controale slideshow */
+
+.slideshow-controls {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(0,0,0,0.8);
+    padding: 15px 25px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    z-index: 25;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.slideshow-controls.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Show controls on hover */
+.slideshow-container:hover .slideshow-controls {
+    opacity: 1;
+    visibility: visible;
+}
+
+.control-btn {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: rgba(255,255,255,0.4);
+    transform: scale(1.1);
+}
+
+.speed-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.speed-control label {
+    white-space: nowrap;
+}
+
+#speed-slider {
+    width: 80px;
+    height: 5px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+    /* Adaugă o tranziție mai lentă pentru slider */
+    transition: all 0.5s ease;
+}
+
+#speed-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #e50914;
+    cursor: pointer;
+    /* Adaugă tranziție pentru thumb */
+    transition: all 0.3s ease;
+}
+
+#speed-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    background: #ff1a2b;
+}
+
+#speed-slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #e50914;
+    cursor: pointer;
+    border: none;
+}
+
+#speed-display {
+    min-width: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.theme-selector select {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.theme-selector select option {
+    background: #333;
+    color: white;
+}
+
+/* Loading indicator */
+.loading-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1002;
+    background: rgba(0,0,0,0.9);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+}
+
+.loading-indicator.hidden {
+    display: none;
+}
+
+.loading-indicator p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+/* Responsive pentru controale */
+@media (max-width: 768px) {
+    .slideshow-controls {
+        bottom: 60px;
+        padding: 10px 15px;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .speed-control {
+        order: 3;
+        flex-basis: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    #speed-slider {
+        width: 120px;
+    }
+    
+    .theme-selector {
+        order: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .slideshow-controls {
+        bottom: 40px;
+        padding: 8px 12px;
+    }
+    
+    .control-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .speed-control {
+        font-size: 0.8rem;
+    }
+    
+    .theme-selector select {
+        font-size: 0.8rem;
+        padding: 3px 8px;
+    }
+}

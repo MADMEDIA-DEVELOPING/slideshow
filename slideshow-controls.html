@@ -1,0 +1,41 @@
+<!-- Controale avansate pentru slideshow (să fie incluse în index.html) -->
+<div class="slideshow-controls">
+    <!-- Play/Pause pentru slideshow -->
+    <button id="slideshow-toggle" class="control-btn" onclick="toggleSlideshow()">
+        <span class="play-icon">⏸️</span>
+    </button>
+    
+    <!-- Speed control -->
+    <div class="speed-control">
+        <label for="speed-slider">Viteză:</label>
+        <input type="range" id="speed-slider" min="1000" max="10000" value="5000" step="500">
+        <span id="speed-display">5s</span>
+    </div>
+    
+    <!-- Fullscreen toggle -->
+    <button id="fullscreen-toggle" class="control-btn" onclick="toggleFullscreen()">
+        <span class="fullscreen-icon">⛶</span>
+    </button>
+    
+    <!-- Theme selector -->
+    <div class="theme-selector">
+        <select id="animation-theme" onchange="changeAnimationTheme()">
+            <option value="mixed">Animații mixte</option>
+            <option value="slide">Doar slide</option>
+            <option value="fade">Doar fade</option>
+            <option value="rotate">Doar rotire</option>
+            <option value="scale">Doar scale</option>
+        </select>
+    </div>
+</div>
+
+<!-- Progress bar -->
+<div class="progress-container">
+    <div class="progress-bar"></div>
+</div>
+
+<!-- Loading indicator -->
+<div id="loading-indicator" class="loading-indicator hidden">
+    <div class="loading-spinner"></div>
+    <p>Se încarcă...</p>
+</div>

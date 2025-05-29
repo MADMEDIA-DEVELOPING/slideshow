@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LNI Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="audio-styles.css">
+    <link rel="stylesheet" href="slideshow-controls.css">
+    <link rel="stylesheet" href="help-modal.css">
+</head>
+<body>
+    <!-- Intro Netflix Style -->
+    <div id="intro" class="intro-container">
+        <div class="netflix-logo">
+            <span class="letter l1">L</span>
+            <span class="letter n">N</span>
+            <span class="letter i">I</span>
+        </div>
+        <div class="intro-sound"></div>
+    </div>
+
+    <!-- Main Content - Slideshow -->
+    <div id="main-content" class="main-content hidden">
+        <div class="slideshow-container">
+            <div class="slide active">
+                <img src="images/slide1.jpg" alt="Slide 1">
+                <div class="slide-content">
+                    <h2>Titlu Slide 1</h2>
+                    <p>Descriere pentru primul slide</p>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <img src="images/slide2.jpg" alt="Slide 2">
+                <div class="slide-content">
+                    <h2>Titlu Slide 2</h2>
+                    <p>Descriere pentru al doilea slide</p>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <img src="images/slide3.jpg" alt="Slide 3">
+                <div class="slide-content">
+                    <h2>Titlu Slide 3</h2>
+                    <p>Descriere pentru al treilea slide</p>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <button class="nav-btn prev" onclick="changeSlide(-1)" title="Slide anterior (←)">❮</button>
+            <button class="nav-btn next" onclick="changeSlide(1)" title="Slide următor (→)">❯</button>
+            
+            <!-- Dots indicator -->
+            <div class="dots-container">
+                <span class="dot active" onclick="currentSlide(1)" title="Slide 1"></span>
+                <span class="dot" onclick="currentSlide(2)" title="Slide 2"></span>
+                <span class="dot" onclick="currentSlide(3)" title="Slide 3"></span>
+            </div>
+            
+            <!-- Advanced Controls -->
+            <div class="slideshow-controls">
+                <button id="slideshow-toggle" class="control-btn" onclick="toggleSlideshow()" title="Play/Pause (P)">
+                    <span class="play-icon">⏸️</span>
+                </button>
+                
+                <div class="speed-control">
+                    <label for="speed-slider">Viteză:</label>
+                    <input type="range" id="speed-slider" min="1000" max="10000" value="5000" step="500" title="Ajustează viteza slideshow-ului">
+                    <span id="speed-display">5s</span>
+                </div>
+                
+                <button id="fullscreen-toggle" class="control-btn" onclick="toggleFullscreen()" title="Fullscreen (F)">
+                    <span class="fullscreen-icon">⛶</span>
+                </button>
+                
+                <div class="theme-selector">
+                    <select id="animation-theme" onchange="changeAnimationTheme()" title="Selectează tipul de animație">
+                        <option value="mixed">Animații mixte</option>
+                        <option value="slide">Doar slide</option>
+                        <option value="fade">Doar fade</option>
+                        <option value="rotate">Doar rotire</option>
+                        <option value="scale">Doar scale</option>
+                    </select>
+                </div>
+                
+                <button class="control-btn" onclick="advancedControls.toggleControlsHelp()" title="Ajutor controale (H)">
+                    <span>❓</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Audio pentru muzica de fundal -->
+        <audio id="background-music" loop preload="auto">
+            <source src="audio/background-music.mp3" type="audio/mpeg">
+            <source src="audio/background-music.ogg" type="audio/ogg">
+            <source src="audio/background-music.wav" type="audio/wav">
+        </audio>
+        
+        <!-- Control pentru muzică -->
+        <div class="music-control">
+            <button id="music-toggle" onclick="toggleMusic()" title="Toggle muzică (M)">🔊</button
