@@ -320,11 +320,12 @@
                 <img src="poza inainte.jpg" alt="Slide 3">
                 <div class="slide-content">
                     </div>
+            </div>
             
-           
-            
-            <!-- Adaugă mai multe slide-uri după necesitate -->
-            
+
+
+
+
             <!-- Navigation -->
             <button class="nav-btn prev" onclick="changeSlide(-1)">❮</button>
             <button class="nav-btn next" onclick="changeSlide(1)">❯</button>
@@ -342,12 +343,18 @@
             <source src="Tina Turner - The Best (Official Music Video).mp3" type="audio/mpeg">
         </audio>
         
+        <!-- Audio pentru melodia Inapoi -->
+        <audio id="inapoi-music" loop>
+            <source src="Tina Turner - The Best (Official Music Video).mp3" type="audio/mpeg">
+        </audio>
+        
         <!-- Control pentru muzică -->
         <div class="music-control">
             <button id="music-toggle" onclick="toggleMusic()">🔊</button>
+            <button id="song-switch" onclick="switchSong()">🎵</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script
 </body>
 </html>
